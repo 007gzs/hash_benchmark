@@ -5,10 +5,10 @@ use std::{
 
 mod common;
 mod hash_test;
-mod renchmark;
+mod brenchmark;
 
 fn test_value() {
-    for stat in renchmark::btest(0, 0) {
+    for stat in brenchmark::btest(0, 0x12345678) {
         println!("{}", stat)
     }
 }
@@ -19,7 +19,7 @@ fn main() -> Result<()> {
     let seed = 0;
     for bit in 0..25 {
         let size = 1 << bit;
-        for stat in renchmark::btest(size, seed) {
+        for stat in brenchmark::btest(size, seed) {
             csv.write_fmt(format_args!(
                 "{},{},{:?},{},{},{}\n",
                 stat.name,
@@ -29,7 +29,6 @@ fn main() -> Result<()> {
                 stat.speed(),
                 stat.size_per_sec()
             ))?;
-            println!("{}", stat)
         }
     }
     Ok(())
