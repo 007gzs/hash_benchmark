@@ -3,9 +3,9 @@ use std::{
     io::{Result, Write},
 };
 
+mod brenchmark;
 mod common;
 mod hash_test;
-mod brenchmark;
 
 fn test_value() {
     for stat in brenchmark::btest(0, 0x12345678) {

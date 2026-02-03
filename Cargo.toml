@@ -24,3 +24,4 @@ twox-hash = "2"
 seahash = "4"
 xxhash-rust = {version="0", features =["xxh32", "const_xxh32", "xxh64", "const_xxh64", "xxh3", "const_xxh3"]}
 murmur3 = {git = "https://github.com/stusmall/murmur3", branch="master",version= "0.5.2"}
+fastmurmur3 = "0"
